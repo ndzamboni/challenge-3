@@ -1,9 +1,9 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
+const employeesArray = []; //empty array
 
 // Collect employee data
 const collectEmployees = function() {
-  const employeesArray = []; //empty array
   while (true) {
     const firstName = prompt("Enter employee's first name (or 'done' to finish):");
     if (firstName.toLowerCase() === 'done') break; // Exit loop if user inputs 'done'
@@ -53,6 +53,7 @@ const getRandomEmployee = function(employeesArray) {
   
   // Display the random employee
   console.log("Random Employee:");
+  console.log("Congrats")
   console.table(randomEmployee);
 }
 
