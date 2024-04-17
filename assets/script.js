@@ -52,8 +52,8 @@ const getRandomEmployee = function(employeesArray) {
   const randomEmployee = employeesArray[randomIndex];
   
   // Display the random employee
-  console.log("Random Employee:");
-  console.log("Congrats")
+  console.log("Congrats, " + randomEmployee.firstName + " " + randomEmployee.lastName + "! You've won!");
+  console.log(randomEmployee);
   console.table(randomEmployee);
 }
 
