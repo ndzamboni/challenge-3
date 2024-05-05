@@ -4,12 +4,18 @@ const employees = [];
 
 // Collect employee data
 const collectEmployees = function() {
-  // TODO: Get user input to create and return an array of employee objects
   let addEmployee = true;
   while (addEmployee) {
     const firstName = prompt("Enter the employee's first name:");
     const lastName = prompt("Enter the employee's last name:");
-    const salary = parseFloat(prompt("Enter the employee's salary:"));
+    let salary = parseFloat(prompt("Enter the employee's salary:"));
+    
+    // Validate if salary is a number, default to 0 if not
+    if (isNaN(salary)) {
+      alert("Invalid salary entered. Please enter a valid number.");
+      salary = parseFloat(prompt("Enter the employee's salary:"));
+    }
+
     const employee = {
       firstName: firstName,
       lastName: lastName,
@@ -25,11 +31,12 @@ const collectEmployees = function() {
 
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
-  // TODO: Calculate and display the average salary
   let totalSalary = 0;
   for (let i = 0; i < employeesArray.length; i++) {
     totalSalary += employeesArray[i].salary;
   }
+  const averageSalary = totalSalary / employeesArray.length;
+  console.log("Average Salary: $" + averageSalary.toFixed(2));
 }
 
 // Select a random employee
